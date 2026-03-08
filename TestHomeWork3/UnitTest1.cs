@@ -30,7 +30,27 @@ namespace TestHomeWork3
 
 
         /// Test #2.
+        [Test]
+        public void TestRCN()
+        {
+            Assert.That(() => RCN(new string[] { "C++", "PascalABC" }, "Я учу PascalABC, C#, C++"), Is.EqualTo("Я учу *********, C#, ***"));
+        }
+        [Test]
+        public void TestRCN2() 
+        {
+                Assert.That(() => RCN(new string[] { "66", "5" }, "2 + 2 = 5 4, 6 + 6 = 66 12"), Is.EqualTo("2 + 2 = * 4, 6 + 6 = ** 12"));
+        }
+
+
+        /// Test #3.
         
+
+
+
+
+
+
+
 
     }
 }

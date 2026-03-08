@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Homework3
@@ -34,6 +35,49 @@ namespace Homework3
             }
             return result;
         }
+
+
+        // #2.
+        public static string RCN(string[] censor, string str)
+        {
+            if (str == null)
+                throw new ArgumentException("string is null");
+            if (censor == null || censor.Length == 0)
+                return str;
+
+            char[] deli = { ' ', ',', '.', '!', '?', ':', ';' };
+            var result = new StringBuilder();
+            var word = new StringBuilder();
+
+            foreach (char ch in str)
+            {
+                if (deli.Contains(ch))
+                {
+                    if (word.Length > 0)
+                    {
+                        string w = word.ToString();
+                        result.Append(censor.Contains(w) ? new string('*', w.Length) : w);
+                        word.Clear();
+                    }
+                    result.Append(ch);
+                }
+                else
+                {
+                    word.Append(ch);
+                }
+            }
+
+            if (word.Length > 0)
+            {
+                string w = word.ToString();
+                result.Append(censor.Contains(w) ? new string('*', w.Length) : w);
+            }
+
+            return result.ToString();
+        }
+
+
+        // #3.
 
 
 
