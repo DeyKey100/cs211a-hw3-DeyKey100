@@ -56,9 +56,15 @@ namespace TestHomeWork3
 
 
         /// Test #4.
+        [Test]
+        public void TestToLow()
+        {
+            Assert.That(() => ToLow("Привет Всем! Это тестовая строка.\nВторая строка."), Is.EqualTo(new string[] { "привет", "всем", "это", "тестовая", "строка", "вторая", "строка" }));
+        }
         
 
-
+        /// Test #5.
+        
 
 
 

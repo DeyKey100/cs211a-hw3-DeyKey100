@@ -6,6 +6,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Homework3
 {
@@ -95,8 +96,17 @@ namespace Homework3
 
 
         // #4.
+        public static string[] ToLow(string text)
+        {
+            if (text == null)
+                throw new ArgumentNullException(nameof(text));
 
-  
+            char[] delimit = { ' ', '.', ',', ':', ';', '-', '!', '?', '\n' };
+            return text.Split(delimit, StringSplitOptions.RemoveEmptyEntries).Select(word => word.ToLower()).ToArray();
+        }
+
+
+        // #5.
 
 
 
