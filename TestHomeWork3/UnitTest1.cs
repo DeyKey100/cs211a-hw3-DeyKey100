@@ -61,10 +61,31 @@ namespace TestHomeWork3
         {
             Assert.That(() => ToLow("Привет Всем! Это тестовая строка.\nВторая строка."), Is.EqualTo(new string[] { "привет", "всем", "это", "тестовая", "строка", "вторая", "строка" }));
         }
-        
+
 
         /// Test #5.
-        
+        [Test]        
+        public void TestCountOfIndex1()
+        {
+            Assert.That(() => CountOfIndex("123456 78901 654321 12345 999999"), Is.EqualTo(3));
+        }
+        [Test]
+        public void TestCountOfIndex2()
+        {
+            Assert.That(() => CountOfIndex("abc123 456789 12 345678 x123456"), Is.EqualTo(2));
+        }
+        [Test]
+        public void TestCountOfIndex3()
+        {
+            Assert.That(() => CountOfIndex("нет цифр"), Is.EqualTo(0));
+        }
+
+
+        /// Test #6.
+        //[Test]
+
+
+
 
 
 

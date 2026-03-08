@@ -107,8 +107,22 @@ namespace Homework3
 
 
         // #5.
+        public static int CountOfIndex(string str)
+        {
+            if (str == null) throw new ArgumentNullException("null");
+
+            string[] words = str.Split(' ');
+            int cnt = 0;
+            foreach (var s in words)
+            {
+                if (s.Length == 6 && s.All(x => char.IsDigit(x)))
+                    cnt++;
+            }
+            return cnt;
+        }
 
 
+        // #6.
 
     }
 }
