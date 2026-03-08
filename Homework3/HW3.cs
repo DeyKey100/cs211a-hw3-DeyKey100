@@ -20,7 +20,7 @@ namespace Homework3
         public static string[] AddSpace(string[] mass)
         {
             if (mass == null)
-                throw new ArgumentNullException("Null");;
+                throw new ArgumentNullException("Null"); ;
             foreach (string s in mass)
             {
                 if (s.Length % 2 == 0)
@@ -123,6 +123,14 @@ namespace Homework3
 
 
         // #6.
+        public static int CountOfIndexRegex(string str)
+        {
+            if (str == null)
+                throw new ArgumentNullException("null");
+
+            MatchCollection matches = Regex.Matches(str, @"\b\d{6}\b");
+            return matches.Count;
+        }
 
     }
 }

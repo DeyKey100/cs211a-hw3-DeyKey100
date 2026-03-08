@@ -82,14 +82,16 @@ namespace TestHomeWork3
 
 
         /// Test #6.
-        //[Test]
-
-
-
-
-
-
-
+        [Test]
+        public void TestCountOfIndexRegex()
+        {
+            Assert.That(() => CountOfIndexRegex("123456 78901 654321 12345 999999"), Is.EqualTo(3));
+        }
+        [Test]
+        public void TestCountOfIndexRegex2()
+        {
+            Assert.That(() => CountOfIndexRegex("123456, 654321 и 789012."), Is.EqualTo(3));
+        }
 
     }
 }
