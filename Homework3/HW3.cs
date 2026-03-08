@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -78,7 +79,24 @@ namespace Homework3
 
 
         // #3.
+        public static string[] SortedMax(string[] words)
+        {
+            if (words == null)
+                throw new ArgumentNullException("null");
 
+            string[] result = new string[words.Length];
+            for (int i = 0; i < words.Length; i++)
+            {
+                string[] temp = words[i].Split(' ', '.', ',', '!', '?');
+                result[i] = temp.MaxBy(s => s.Length);
+            }
+            return result.OrderBy(s => s.Length).ToArray();
+        }
+
+
+        // #4.
+
+  
 
 
 

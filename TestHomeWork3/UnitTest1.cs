@@ -43,8 +43,20 @@ namespace TestHomeWork3
 
 
         /// Test #3.
-        
+        [Test]
+        public void TestSortedMax()
+        {
+            Assert.Throws<ArgumentNullException>(() => SortedMax(null));
+        }
+        [Test]
+        public void TestSortedMax2()
+        {
+            Assert.That(() => SortedMax(new string[] { "кот собака мышь", "Hello, World!", "один, два, три, 4, 5" }), Is.EqualTo(new string[] { "один", "Hello", "собака" }));
+        }
 
+
+        /// Test #4.
+        
 
 
 
